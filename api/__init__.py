@@ -22,7 +22,7 @@ def getCurrency(from_sym: str, to_sym: str) -> float:
     return obj[to_sym]
 
 
-def getTopSymbols(sym: str, limit: int = 10) -> Symbols:
+def getTopSymbols(sym: str, limit: int = 19) -> Symbols:
     response = requests.get(f"{host}/data/top/totalvolfull?limit={limit}&tsym={sym}")
     try:
         response.raise_for_status()
