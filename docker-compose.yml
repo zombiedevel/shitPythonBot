@@ -1,0 +1,28 @@
+version: '3.3'
+
+services:
+  cryptoconvert-bot:
+    build:
+      context: .
+    container_name: cryptoconvert-bot
+    restart: on-failure
+    depends_on:
+      - mysql
+    environment:
+      BOT_TOKEN: 1773577343:AAFxxNtoEAsvANorf2fuOSRMW38HFX43ZvM
+      API_SERVER: https://api.telegram.org
+    volumes:
+      - ./logs/:/root/logs/
+  mysql:
+    image: mysql:8.0.20
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    security_opt:
+      - seccomp:unconfined
+    ports:
+      - 33010:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+      MYSQL_DATABASE: cryptodb
