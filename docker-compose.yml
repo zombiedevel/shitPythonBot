@@ -11,6 +11,10 @@ services:
     environment:
       BOT_TOKEN: 1773577343:AAFxxNtoEAsvANorf2fuOSRMW38HFX43ZvM
       API_SERVER: https://api.telegram.org
+      DB_HOST: mysql
+      DB_USER: docker
+      DB_PASS: docker
+      DB_NAME: cryptdb
     volumes:
       - ./logs/:/root/logs/
   mysql:
