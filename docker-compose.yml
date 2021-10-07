@@ -29,4 +29,4 @@ services:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
-      MYSQL_DATABASE: cryptodb
+      MYSQL_DATABASE: cryptdb
